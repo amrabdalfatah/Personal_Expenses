@@ -44,18 +44,40 @@ class MyApp extends StatelessWidget {
                 elevation: 3,
               ),
             ),
-            Expanded(
-              child: Container(
-                width: double.infinity,
+            ...transactions.map((index) {
+              return Container(
                 margin: EdgeInsets.symmetric(horizontal: 8),
                 child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text('Transaction'),
+                  child: ListTile(
+                    leading: Container(
+                      padding: EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 3,
+                        ),
+                      ),
+                      child: Text(
+                        '${index.amount}',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ),
+                    title: Text(
+                      '${index.title}',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    subtitle: Text('${index.date}'),
+                    trailing: IconButton(
+                      icon: Icon(Icons.delete),
+                      onPressed: () {},
+                    ),
                   ),
                 ),
-              ),
-            ),
+              );
+            }).toList(),
           ],
         ),
       ),
