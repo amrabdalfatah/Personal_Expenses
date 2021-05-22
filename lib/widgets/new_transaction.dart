@@ -23,12 +23,23 @@ class NewTransaction extends StatelessWidget {
             TextField(
               controller: amountController,
               decoration: InputDecoration(labelText: 'Amount'),
+              keyboardType: TextInputType.number,
             ),
             TextButton(
               child: Text('Add Transaction'),
               onPressed: () {
+                final enteredTitle = titleController.text;
+                final enteredAmount = double.parse(amountController.text);
+
+                if (enteredTitle.isEmpty || enteredAmount <= 0) {
+                  // to stop method work if one of this expression is true
+                  return;
+                }
+
                 addNewTransaction(
-                    titleController.text, double.parse(amountController.text));
+                  enteredTitle,
+                  enteredAmount,
+                );
               },
             ),
           ],
