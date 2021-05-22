@@ -24,12 +24,27 @@ class _UserTransactionsState extends State<UserTransactions> {
       date: DateTime.now(),
     ),
   ];
+
+  // method to manage the data or to add new transaction to list
+  void _addNewTransaction(String txTitle, double txAmount) {
+    final newTx = Transaction(
+      id: DateTime.now().toString(),
+      title: txTitle,
+      amount: txAmount,
+      date: DateTime.now(),
+    );
+
+    setState(() {
+      _userTransactions.add(newTx);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         // model of bottom sheet
-        NewTransaction(),
+        NewTransaction(_addNewTransaction),
 
         // show lists of transaction
         TransactionList(_userTransactions),
