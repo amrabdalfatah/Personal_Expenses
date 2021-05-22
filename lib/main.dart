@@ -31,6 +31,10 @@ class MyHomePage extends StatelessWidget {
     ),
   ];
 
+  // to accept the value from the TextField
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,9 +42,9 @@ class MyHomePage extends StatelessWidget {
         title: Text('Flutter App'),
       ),
       body: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+          // chart
           Container(
             width: double.infinity,
             child: Card(
@@ -49,6 +53,8 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
+
+          // model of bottom sheet
           Card(
             elevation: 5,
             child: Container(
@@ -57,19 +63,26 @@ class MyHomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   TextField(
+                    controller: titleController,
                     decoration: InputDecoration(labelText: 'Title'),
                   ),
                   TextField(
+                    controller: amountController,
                     decoration: InputDecoration(labelText: 'Amount'),
                   ),
                   TextButton(
                     child: Text('Add Transaction'),
-                    onPressed: () {},
+                    onPressed: () {
+                      print(titleController.text);
+                      print(amountController.text);
+                    },
                   ),
                 ],
               ),
             ),
           ),
+
+          // show lists of transaction
           Column(
             children: transactions.map((tx) {
               return Card(
