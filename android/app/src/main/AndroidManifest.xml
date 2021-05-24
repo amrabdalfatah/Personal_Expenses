@@ -2,7 +2,7 @@
     package="com.amrabdalfatah.expenses_personal_app">
    <application
         android:label="Personal Expenses"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

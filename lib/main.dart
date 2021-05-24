@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: (MediaQuery.of(context).size.height -
                       appBar.preferredSize.height -
                       MediaQuery.of(context).padding.top) *
-                  0.32,
+                  0.35,
               child: Chart(_recentTransactions),
             ),
 
@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: (MediaQuery.of(context).size.height -
                       appBar.preferredSize.height -
                       MediaQuery.of(context).padding.top) *
-                  0.68,
+                  0.65,
               child: TransactionList(_userTransactions, _deleteTransaction),
             ),
           ],
