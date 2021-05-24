@@ -1,16 +1,37 @@
 # expenses_personal_app
 
-A new Flutter project.
+Personal Expenses App
 
-## Getting Started
+This app is to calculate your expenses through one week 
 
-This project is a starting point for a Flutter application.
+you can add what transactions you buy and it will calculate your expenses 
 
-A few resources to get you started if this is your first Flutter project:
+This App is only in portrait mode(no Landscape)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Images: 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="assets/screenshoots/logo.jfif" width="200">
+
+<img src="assets/screenshoots/photo9.jfif" width="400">
+
+<img src="assets/screenshoots/photo8.jfif" width="400">
+
+<img src="assets/screenshoots/photo7.jfif" width="400">
+
+<img src="assets/screenshoots/photo6.jfif" width="400">
+
+<img src="assets/screenshoots/photo5.jfif" width="400">
+
+<img src="assets/screenshoots/photo4.jfif" width="400">
+
+<img src="assets/screenshoots/photo2.jfif" width="400">
+
+<img src="assets/screenshoots/photo1.jfif" width="400">
+
+In Tablet: 
+
+<img src="assets/screenshoots/tablet2.jfif" width="500">
+
+<img src="assets/screenshoots/tablet1.jfif" width="500">
+
+
