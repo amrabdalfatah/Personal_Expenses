@@ -35,7 +35,8 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+// mix in with WidgetsBindingObserver which is a mix
+class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   final List<Transaction> _userTransactions = [];
 
   List<Transaction> get _recentTransactions {
@@ -75,6 +76,24 @@ class _MyHomePageState extends State<MyHomePage> {
         return element.id == id;
       });
     });
+  }
+
+  // methods to widget's lifecycle and app lifecycle
+  @override
+  void initState() {
+    WidgetsBinding.instance.addObserver(this);
+    super.initState();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
   }
 
   @override
